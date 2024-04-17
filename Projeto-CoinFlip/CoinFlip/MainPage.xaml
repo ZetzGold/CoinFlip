@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CoinFlip.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25"
+            VerticalOptions="Center">
+            <Image
+                x:Name="ImagemMoeda"
+                Source="cara.jpg"
+                HeightRequest="185"
+                Aspect="AspectFit"
+                SemanticProperties.Description="dot net bot in a race car number eight" />
+
+            <Picker x:Name="Selecionador"
+                    HorizontalOptions="Center"
+                    Title="Cara ou Coroa"
+                    SelectedIndexChanged="Mudar_Selecionador">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Coroa</x:String>
+                        <x:String>Cara</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <Button
+                Text="Jogar a Moeda"
+                Clicked="Botao_Clicado"
+                WidthRequest="170"
+                BackgroundColor="Black"/>
+
+            <Label Text=""
+                x:Name="Resultado"
+                HorizontalOptions="Center"
+                FontSize="Medium"/>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
